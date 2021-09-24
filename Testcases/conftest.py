@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from Utilities import configReader
 
+
 @pytest.fixture(params=["chrome"],scope="function")
 def get_browser(request):
     if request.param=="chrome":
