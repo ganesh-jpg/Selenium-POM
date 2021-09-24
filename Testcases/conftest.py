@@ -3,6 +3,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from Utilities import configReader
+import time
 
 
 @pytest.fixture(params=["chrome"],scope="function")
@@ -16,4 +17,5 @@ def get_browser(request):
     driver.maximize_window()
     driver.implicitly_wait(10)
     yield driver
+    time.sleep(5)
     driver.quit()
